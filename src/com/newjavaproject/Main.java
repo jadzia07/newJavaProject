@@ -8,6 +8,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean shouldContinue = true;
 
+        Party party = new Party();
+
         while (shouldContinue) {
             System.out.println("Wybierz opcję");
             System.out.println("1. Wyświetl gości");
@@ -19,32 +21,11 @@ public class Main {
             int userChoice = scanner.nextInt();
 
             switch (userChoice) {
-                case 1 -> System.out.println("wybrano 1");
-                case 2 -> System.out.println("wybrano 2");
-                case 3 -> System.out.println("wybrano 3");
-                case 4 -> System.out.println("wybrano 4");
+                case 1 -> party.displayGuests();
+                case 2 -> party.addGuest();
+                case 3 -> party.displayMeals();
+                case 4 -> party.displayGuestByPhoneNumber();
                 case 5 -> shouldContinue = false;
-
-
-/*            Przed wersją Java 12, metoda switch działała inaczej, przykład:
-            switch (userChoice) {
-                case 1:
-                    System.out.println("wybrano 1");
-                    break;
-                case 2:
-                    System.out.println("wybrano 2");
-                    break;
-                case 3:
-                    System.out.println("wybrano 3");
-                    break;
-                case 4:
-                    System.out.println("wybrano 4");
-                    break;
-                case 5:
-                    shouldContinue = false;
-                    break;
-
- */
             }
         }
     }
